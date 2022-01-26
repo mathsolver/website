@@ -10,7 +10,7 @@ class SimplifyController
 {
     public function __invoke(): View|RedirectResponse
     {
-        if (request()->missing('expression')) {
+        if (empty(request('expression'))) {
             return redirect()->route('home');
         }
 
