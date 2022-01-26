@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d2816f199a52d63642a23a05f178502",
+    "content-hash": "3730b41d9529003a38f7fca1fd84497b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1658,6 +1658,48 @@
                 }
             ],
             "time": "2021-11-21T11:48:40+00:00"
+        },
+        {
+            "name": "mathsolver/mathsolver",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./../math-solver",
+                "reference": "3a0f8f5dfcd0474148948f49b1e5f333bf4de440"
+            },
+            "require": {
+                "illuminate/collections": "^8.80",
+                "illuminate/support": "^8.80"
+            },
+            "require-dev": {
+                "pestphp/pest": "dev-master",
+                "symfony/var-dumper": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MathSolver\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "./vendor/bin/pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen van Rensen",
+                    "role": "Developer",
+                    "homepage": "https://www.jeroenvanrensen.nl"
+                }
+            ],
+            "description": "PHP package to simplify mathematical expressions and solve equations.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "monolog/monolog",
@@ -8144,7 +8186,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mathsolver/mathsolver": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
