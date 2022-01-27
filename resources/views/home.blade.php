@@ -1,4 +1,6 @@
 <x-layout title="Math Solver">
+    <x-navbar />
+
     <div class="h-screen flex items-center justify-center">
         <div class="w-full">
             <h1 class="text-5xl mb-8 font-bold text-center text-gray-900">Simplify expressions<span class="text-indigo-500">.</span></h1>
@@ -14,7 +16,7 @@
                         type="text" name="expression" id="expression"
                         placeholder="Type an expression..."
                         autofocus
-                        class="w-full px-6 py-4 placeholder-gray-500 bg-indigo-100 rounded-xl focus:outline-none"
+                        class="w-full px-6 py-4 placeholder-gray-500 bg-white shadow rounded-xl focus:outline-none"
                         autocomplete="off"
                         x-data="{ expression: '' }"
                         x-model="expression"
