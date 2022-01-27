@@ -12,7 +12,7 @@
                 <form action="{{ route('simplify') }}" method="get" class="w-full">
                     <input
                         type="text" name="expression" id="expression"
-                        placeholder="Type your expression..."
+                        placeholder="Type an expression..."
                         autofocus
                         class="w-full px-6 py-4 placeholder-gray-500 bg-indigo-100 rounded-xl focus:outline-none"
                         autocomplete="off"

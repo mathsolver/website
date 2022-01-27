@@ -1,12 +1,14 @@
-<x-layout :title="$title">
-    <div class="p-8">
-        <h2 class="text-2xl font-bold mb-2">Expression: \( {{ $expression }} \)</h2>
-        <h1 class="text-4xl font-bold mb-4">Simplified: \( {{ $simplified }} \)</h1>
+<x-layout title="Simplify {{ $raw }} - Math Solver">
+    <x-navbar :expression="$raw" />
 
-        <form action="{{ route('simplify') }}" method="get">
-            <label for="expression">Simplify an expression:</label><br>
-            <input type="text" name="expression" id="expression" class="border border-gray-300" value="{{ request('expression') }}" /><br>
-            <button type="submit">Simplify</button>
-        </form>
+    <div class="h-screen flex items-center justify-center">
+        <div class="max-w-xl w-full mx-auto space-y-10">
+            <h1 class="text-3xl font-bold text-gray-900">Simplify \( {{ $expression }} \) <span class="text-indigo-500">.</span></h1>
+
+            <div class="bg-white p-8 mx-auto shadow-md rounded-lg">
+                <p class="font-semibold mb-4 text-indigo-700">Simplified:</p>
+                <p class="text-2xl">\( {{ $simplified }} \)</p>
+            </div>
+        </div>
     </div>
 </x-layout>

@@ -17,17 +17,7 @@
     <!-- Title -->
     <title>{{ $title }}</title>
 </head>
-<body>
-    <nav class="py-16 px-20 w-full absolute flex items-center justify-between">
-        <a href="{{ route('home') }}" class="text-lg font-semibold text-gray-900">
-            Math Solver<span class="text-indigo-500">.</span>
-        </a>
-
-        <ul>
-            <li><a class="text-gray-800" href="{{ route('home') }}">Home</a></li>
-        </ul>
-    </nav>
-
+<body class="bg-gray-100">
     {{ $slot }}
 </body>
 </html>
