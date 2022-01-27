@@ -15,6 +15,9 @@
 
     <!-- Title -->
     <title>{{ $title }}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('favicon.svg') }}" />
 </head>
 <body class="bg-gray-100">
     {{ $slot }}
