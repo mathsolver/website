@@ -15,6 +15,7 @@ class SimplifyController
         }
 
         return view('simplify', [
+            'title' => 'Simplify ' . Math::from(request('expression'))->string() . ' - Math Solver',
             'expression' => Math::from(request('expression'))->mathjax(),
             'simplified' => Math::from(request('expression'))->simplify()->mathjax(),
         ]);
