@@ -10,13 +10,13 @@
                 designed to help <span class="font-semibold text-gray-800">you</span> with math.
             </p>
 
-            <div class="relative flex items-center max-w-xl mx-auto">
-                <form action="{{ route('simplify') }}" method="get" class="w-full">
+            <div class="flex items-center max-w-xl mx-auto">
+                <form action="{{ route('simplify') }}" method="get" class="w-full relative">
                     <input
                         type="text" name="expression" id="expression"
                         placeholder="Type an expression..."
                         autofocus
-                        class="w-full px-6 py-4 placeholder-gray-500 bg-white shadow rounded-xl focus:outline-none"
+                        class="w-full mb-12 px-6 py-4 placeholder-gray-500 bg-white shadow rounded-xl focus:outline-none"
                         autocomplete="off"
                         x-data="{ expression: '' }"
                         x-model="expression"
@@ -29,6 +29,12 @@
                     >
                         Simplify
                     </button>
+
+                    <div class="grid grid-cols-3 gap-2">
+                        <a href="{{ route('simplify', ['expression' => '7x + 5x']) }}" class="block bg-gray-200 py-3 px-6 rounded-lg hover:bg-gray-300 text-center">\( 7x + 5x \)</a>
+                        <a href="{{ route('simplify', ['expression' => '4y * 3y']) }}" class="block bg-gray-200 py-3 px-6 rounded-lg hover:bg-gray-300 text-center">\( 4y * 3y \)</a>
+                        <a href="{{ route('simplify', ['expression' => 'root(20, 2)']) }}" class="block bg-gray-200 py-3 px-6 rounded-lg hover:bg-gray-300 text-center">\( \sqrt{20} \)</a>
+                    </div>
                 </form>
             </div>
         </div>

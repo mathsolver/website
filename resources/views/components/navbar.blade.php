@@ -1,5 +1,5 @@
-<nav class="py-16 px-20 w-full absolute flex items-center justify-between">
-    <a href="{{ route('home') }}" class="text-lg font-semibold text-gray-900 w-64">
+<nav class="py-14 px-20 w-full absolute flex items-center justify-between">
+    <a href="{{ route('home') }}" class="py-2 text-lg font-semibold text-gray-900 w-64">
         Math Solver<span class="text-indigo-500">.</span>
     </a>
 
@@ -16,7 +16,7 @@
                 value="{{ $expression }}"
             />
 
-            <button class="py-2 px-4 absolute right-0 text-white font-medium bg-indigo-500 hover:bg-indigo-600 rounded-md shadow shadow-indigo-300 transition focus:outline-none focus:bg-indigo-600">Simplify</button>
+            <button class="py-2 px-4 absolute right-0 text-white font-medium bg-indigo-500 hover:bg-indigo-600 rounded-md shadow shadow-indigo-100 transition focus:outline-none focus:bg-indigo-600">Simplify</button>
         </form>
     @endif
 
