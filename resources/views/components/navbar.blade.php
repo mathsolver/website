@@ -4,7 +4,7 @@
     </a>
 
     @if(isset($expression))
-        <form action="{{ route('simplify') }}" method="get" class="flex items-center">
+        <form action="{{ route('simplify') }}" method="get" class="flex items-center relative">
             <input
                 type="text"
                 name="expression"
@@ -16,7 +16,7 @@
                 value="{{ $expression }}"
             />
 
-            <button class="py-2 px-4 text-white font-medium bg-indigo-500 hover:bg-indigo-600 rounded-r-md shadow  shadow-indigo-300 transition focus:outline-none focus:bg-indigo-600">Simplify</button>
+            <button class="py-2 px-4 absolute right-0 text-white font-medium bg-indigo-500 hover:bg-indigo-600 rounded-md shadow shadow-indigo-300 transition focus:outline-none focus:bg-indigo-600">Simplify</button>
         </form>
     @endif
 
