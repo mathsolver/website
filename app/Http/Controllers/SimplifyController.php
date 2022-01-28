@@ -17,7 +17,7 @@ class SimplifyController
 
         try {
             $expression = Math::from(request('expression'))->mathjax();
-            $simplified = Math::from(request('expression'))->simplify()->mathjax();
+            $result = Math::from(request('expression'))->withSteps()->simplify()->mathjax();
         } catch (Throwable $exception) {
             return view('simplify', [
                 'raw' => request('expression'),
@@ -29,7 +29,8 @@ class SimplifyController
         return view('simplify', [
             'raw' => request('expression'),
             'expression' => $expression,
-            'simplified' => $simplified,
+            'simplified' => $result['result'],
+            'steps' => $result['steps'],
         ]);
     }
 }
