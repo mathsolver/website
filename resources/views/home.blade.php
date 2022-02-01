@@ -13,32 +13,45 @@
             </p>
 
             <div class="flex items-center max-w-xl mx-auto">
-                <form action="{{ route('simplify') }}" method="get" class="relative w-full" x-data="{ expression: '', showHelp: false }">
-                    <!-- Expression input -->
-                    <input
-                        type="text" name="expression" id="expression"
-                        placeholder="Type an expression..."
-                        autofocus
-                        class="w-full px-6 py-4 mb-12 placeholder-gray-500 bg-white shadow rounded-xl focus:outline-none"
-                        autocomplete="off"
-                        x-model="expression"
-                        :class="{ 'font-mono': expression, 'tracking-wide': !expression }"
-                    />
+                <form action="{{ route('simplify') }}" method="get" class="w-full" x-data="{ expression: '', showHelp: false }">
+                    <div class="relative flex items-center mb-12">
+                        <!-- Expression input -->
+                        <input
+                            type="text" name="expression" id="expression"
+                            placeholder="Type an expression..."
+                            autofocus
+                            class="w-full px-6 py-4 placeholder-gray-500 bg-white shadow rounded-l-xl focus:outline-none"
+                            autocomplete="off"
+                            x-model="expression"
+                            :class="{ 'font-mono': expression, 'tracking-wide': !expression }"
+                        />
 
-                    <!-- Show help button -->
-                    <button type="button" class="absolute right-[calc(144px+0.75rem)] top-[15px] text-gray-500 hover:text-gray-700" @click="showHelp = true" x-show="!showHelp">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
+                        <!-- Show help button -->
+                        <button
+                            type="button"
+                            class="absolute right-[calc(144px+0.75rem)] top-[15px] text-gray-500 hover:text-gray-700"
+                            @click="showHelp = true"
+                            x-show="!showHelp && expression.length < 38"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
 
-                    <!-- Submit button -->
-                    <button
-                        type="submit"
-                        class="absolute top-0 right-0 px-10 py-4 font-medium text-white transition bg-indigo-500 shadow-xl focus:outline-none focus:bg-indigo-600 rounded-xl hover:bg-indigo-600 hover:shadow-lg"
-                    >
-                        Simplify
-                    </button>
+                        <!-- Submit button -->
+                        <button
+                            type="submit"
+                            class="px-10 py-4 font-medium text-white transition bg-indigo-500 shadow-xl focus:outline-none focus:bg-indigo-600 rounded-r-xl hover:bg-indigo-600 hover:shadow-lg"
+                        >
+                            Simplify
+                        </button>
+                    </div>
 
                     <!-- Help box -->
                     <div
@@ -46,11 +59,11 @@
                         x-show="showHelp"
                         class="relative p-8 mb-12 -mt-4 bg-white rounded-lg shadow"
                         x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 "
-                        x-transition:enter-end="opacity-100 "
+                        x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100"
                         x-transition:leave="transition ease-in duration-200"
-                        x-transition:leave-start="opacity-100 "
-                        x-transition:leave-end="opacity-0 "
+                        x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0"
                     >
                         <!-- Close button -->
                         <button class="absolute text-gray-500 right-8 top-8 hover:text-gray-700" @click="showHelp = false" type="button">

@@ -1,14 +1,14 @@
-<nav class="py-14 px-20 w-full absolute flex items-center justify-between">
-    <a href="{{ route('home') }}" class="py-2 text-lg font-semibold text-gray-900 w-64">
+<nav class="absolute flex items-center justify-between w-full px-20 py-14">
+    <a href="{{ route('home') }}" class="w-64 py-2 text-lg font-semibold text-gray-900">
         Math Solver<span class="text-indigo-500">.</span>
     </a>
 
     @if(isset($expression))
-        <form action="{{ route('simplify') }}" method="get" class="flex items-center relative">
+        <form action="{{ route('simplify') }}" method="get" class="flex items-center">
             <input
                 type="text"
                 name="expression"
-                class="w-96 focus:outline-none bg-white py-2 px-4 shadow rounded-l-md"
+                class="px-4 py-2 bg-white rounded-l-lg shadow w-96 focus:outline-none"
                 placeholder="Type an expression..."
                 x-data="{ expression: '{{ $expression }}' }"
                 x-model="expression"
@@ -16,7 +16,7 @@
                 value="{{ $expression }}"
             />
 
-            <button class="py-2 px-4 absolute right-0 text-white font-medium bg-indigo-500 hover:bg-indigo-600 rounded-md shadow shadow-indigo-100 transition focus:outline-none focus:bg-indigo-600">Simplify</button>
+            <button class="px-4 py-2 font-medium text-white transition bg-indigo-500 rounded-r-lg shadow focus:outline-none focus:bg-indigo-600 hover:bg-indigo-600 hover:shadow-md">Simplify</button>
         </form>
     @endif
 
