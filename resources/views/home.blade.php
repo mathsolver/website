@@ -91,9 +91,9 @@
 
                     <!-- Examples -->
                     <div class="grid grid-cols-3 gap-2">
-                        <a href="{{ route('simplify', ['expression' => '7x + 5x']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( 7x + 5x \)</a>
-                        <a href="{{ route('simplify', ['expression' => '4y * 3y']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( 4y * 3y \)</a>
-                        <a href="{{ route('simplify', ['expression' => 'root(20, 2)']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( \sqrt{20} \)</a>
+                        <a href="{{ route('simplify', ['expression' => '7x^2 + 5x * 4x']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( 7x^2 + 5x * 4x \)</a>
+                        <a href="{{ route('simplify', ['expression' => 'root(18, 2) + root(32, 2)']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( \sqrt{18} + \sqrt{32} \)</a>
+                        <a href="{{ route('simplify', ['expression' => '5 * frac(3, 9) + 4']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( 5 * \frac{3}{9} + 4 \)</a>
                     </div>
                 </form>
             </div>
