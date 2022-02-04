@@ -13,7 +13,7 @@
             </p>
 
             <div class="flex items-center max-w-xl mx-auto">
-                <form action="{{ route('simplify') }}" method="get" class="w-full" x-data="{ expression: '', showHelp: false }">
+                <form action="{{ route('input') }}" method="get" class="w-full" x-data="{ expression: '', showHelp: false }">
                     <div class="relative flex items-center mb-12">
                         <!-- Expression input -->
                         <input
