@@ -14,7 +14,11 @@ class Input extends Component
         ['search' => '', 'replace' => ''],
     ];
 
-    protected $queryString = ['expression', 'substitutions', 'solve'];
+    protected $queryString = [
+        'expression' => ['except' => ''],
+        'substitutions' => ['except' => ['search' => '', 'replace' => '']],
+        'solve' => ['except' => ''],
+    ];
 
     public function render()
     {
