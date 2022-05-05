@@ -2,7 +2,7 @@
     <x-navbar :expression="$raw" />
 
     <div class="w-full max-w-xl pt-56 pb-16 mx-auto">
-        <h1 class="text-5xl font-bold text-gray-900">Simplify \( {{ $expression }} \) <span class="text-indigo-500">.</span></h1>
+        <h1 class="text-5xl font-bold text-gray-900">Simplify \( {{ $expression }} \)<span class="text-indigo-500">.</span></h1>
 
         @if($simplified === 'error')
             <div class="p-8 mx-auto mt-10 bg-white rounded-lg shadow-md">
