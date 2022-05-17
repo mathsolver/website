@@ -13,7 +13,7 @@
             </p>
 
             <div class="flex items-center max-w-xl mx-auto">
-                <form action="{{ route('input') }}" method="get" class="w-full" x-data="{ expression: '', showHelp: false }">
+                <form action="{{ route('simplify') }}" method="get" class="w-full" x-data="{ expression: '', showHelp: false }">
                     <div class="relative flex items-center mb-12">
                         <!-- Expression input -->
                         <input
@@ -61,9 +61,6 @@
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0"
                         x-transition:enter-end="opacity-100"
-                        x-transition:leave="transition ease-in duration-200"
-                        x-transition:leave-start="opacity-100"
-                        x-transition:leave-end="opacity-0"
                     >
                         <!-- Close button -->
                         <button class="absolute text-gray-500 right-8 top-8 hover:text-gray-700" @click="showHelp = false" type="button">
@@ -98,7 +95,13 @@
                     </div>
 
                     <!-- Examples -->
-                    <div class="grid grid-cols-3 gap-2">
+                    <div
+                        class="grid grid-cols-3 gap-2"
+                        x-show="!showHelp"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100"
+                    >
                         <a href="{{ route('simplify', ['expression' => '7x^2 + 5x * 4x']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( 7x^2 + 5x * 4x \)</a>
                         <a href="{{ route('simplify', ['expression' => 'root(18, 2) + root(32, 2)']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( \sqrt{18} + \sqrt{32} \)</a>
                         <a href="{{ route('simplify', ['expression' => '5 * frac(3, 9) + 4']) }}" class="block px-6 py-3 text-center bg-gray-200 rounded-lg hover:bg-gray-300">\( 5 * \frac{3}{9} + 4 \)</a>
