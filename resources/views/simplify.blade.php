@@ -13,12 +13,12 @@
             @forelse ($steps as $step)
                 <div class="p-8 mx-auto mt-10 bg-white rounded-lg shadow-md">
                     <p class="mb-4 font-bold text-indigo-700">{{ $step['name'] }}</p>
-                    <p class="text-2xl">\( {{ $step['result'] }} \)</p>
+                    <p>$$ {{ $step['result'] }} $$</p>
                 </div>
             @empty
                 <div class="p-8 mx-auto mt-10 bg-white rounded-lg shadow-md">
                     <p class="mb-4 font-bold text-indigo-700">Simplified</p>
-                    <p class="text-2xl">\( {{ $simplified }} \)</p>
+                    <p>$$ {{ $simplified }} $$</p>
                 </div>
             @endforelse
         @endif

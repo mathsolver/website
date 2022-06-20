@@ -5,3 +5,8 @@
 [x-cloak] {
     display: none !important;
 }
+
+mjx-container {
+    text-align: left !important;
+    margin: 0 !important;
+}
