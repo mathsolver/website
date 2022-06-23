@@ -1,10 +1,10 @@
-<nav class="absolute flex items-center justify-between w-full px-20 py-14">
-    <a href="{{ route('home') }}" class="text-lg font-semibold text-gray-900">
+<nav class="absolute flex items-center justify-between w-full px-20 py-6 border-b">
+    <a href="{{ route('home') }}" class="w-32 text-lg font-semibold text-gray-900">
         Math Solver<span class="text-indigo-500">.</span>
     </a>
 
     @isset($expression)
-    <form method="get" action="{{ route('simplify') }}" x-data="{ expression: @js($expression) }" class="w-full max-w-xs">
+    <form method="get" action="{{ route('simplify') }}" x-data="{ expression: @js($expression) }" class="w-full max-w-md">
         <input
             type="text"
             name="expression"
@@ -17,7 +17,7 @@
     </form>
     @endif
 
-    <ul class="text-right">
+    <ul class="w-32 text-right">
         <li><a class="text-gray-800" href="{{ route('home') }}">Home</a></li>
     </ul>
 </nav>
