@@ -15,7 +15,7 @@
 
         @foreach($steps as $step)
             @if($step['docs'])
-                <button x-data="{ showDocs: true }" @click="showDocs = !showDocs" class="block w-full p-8 mt-4 text-left bg-white rounded-md shadow">
+                <button x-data="{ showDocs: false }" @click="showDocs = !showDocs" class="block w-full p-8 mt-4 text-left bg-white rounded-md shadow">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-bold text-indigo-700 ">{{ $step['name'] }}</h3>
 
@@ -26,7 +26,16 @@
 
                     <p>$$ {{ $step['result'] }} $$</p>
 
-                    <div class="mt-4 border-t typography" x-show="showDocs">
+                    <div
+                        class="mt-4 border-t typography"
+                        x-show="showDocs"
+                        x-transition:enter="transition duration-300"
+                        x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition duration-200"
+                        x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0"
+                    >
                         {!! str($step['docs'])->markdown() !!}
                     </div>
                 </button>
