@@ -14,24 +14,28 @@
         @endif
 
         @foreach($steps as $step)
-            <div class="p-8 mt-4 bg-white rounded-md shadow" x-data="{ showDocs: true }">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-bold text-indigo-700 ">{{ $step['name'] }}</h3>
-                    @if($step['docs'])
-                        <button @click="showDocs = !showDocs" class="flex items-center justify-center text-gray-500 border border-gray-400 rounded-full w-7 h-7">
+            @if($step['docs'])
+                <button x-data="{ showDocs: true }" @click="showDocs = !showDocs" class="block w-full p-8 mt-4 text-left bg-white rounded-md shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-indigo-700 ">{{ $step['name'] }}</h3>
+
+                        <div class="flex items-center justify-center text-gray-500 transition duration-300 border border-gray-400 rounded-full hover:text-gray-700 hover:border-gray-500 w-7 h-7" :class="{ 'rotate-180': showDocs}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-                        </button>
-                    @endif
-                </div>
+                        </div>
+                    </div>
 
-                <p>$$ {{ $step['result'] }} $$</p>
+                    <p>$$ {{ $step['result'] }} $$</p>
 
-                @if($step['docs'])
                     <div class="mt-4 border-t typography" x-show="showDocs">
                         {!! str($step['docs'])->markdown() !!}
                     </div>
-                @endif
-            </div>
+                </button>
+            @else
+                <div class="p-8 mt-4 bg-white rounded-md shadow" x-data="{ showDocs: true }">
+                    <h3 class="mb-4 font-bold text-indigo-700">{{ $step['name'] }}</h3>
+                    <p>$$ {{ $step['result'] }} $$</p>
+                </div>
+            @endif
         @endforeach
 
         <h2 class="mt-10 text-xl font-bold">Try an example</h2>
