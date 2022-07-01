@@ -10,3 +10,15 @@ mjx-container {
     text-align: left !important;
     margin: 0 !important;
 }
+
+.typography p {
+    @apply mt-4 mb-2 text-gray-700;
+}
+
+.typography p:last-child {
+    @apply mb-0;
+}
+
+.typography mjx-container {
+    @apply text-black;
+}
